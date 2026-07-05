@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class com.example.myapplication.MainActivity { *; }
+-keep class com.example.myapplication.ItemModel { *; }
+-keep class com.example.myapplication.MainViewModel { *; }
+-keep class androidx.lifecycle.ViewModel { *; }
