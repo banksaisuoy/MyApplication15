@@ -1,0 +1,20 @@
+package com.example.myapplication
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+
+class MainViewModel : ViewModel() {
+    private val repository = ItemRepository()
+
+    private val _items = MutableLiveData<List<Item>>()
+    val items: LiveData<List<Item>> = _items
+
+    init {
+        loadItems()
+    }
+
+    private fun loadItems() {
+        _items.value = repository.getItems()
+    }
+}
